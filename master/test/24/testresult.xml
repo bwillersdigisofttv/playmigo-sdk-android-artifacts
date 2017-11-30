@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<testsuite tests="1" failures="0" errors="0" skipped="0" time="53.682" timestamp="2017-11-30T09:54Z">
+  <properties>
+    <property name="device.manufacturer" value="LGE" />
+    <property name="device.model" value="Nexus 5X" />
+    <property name="device.apiLevel" value="26" />
+  </properties>
+  <testcase name="checkDevices(com.playmigo.sdktest.ReceiverTest)" classname="com.playmigo.sdktest.ReceiverTest" time="53.673" />
+</testsuite>
