@@ -1,0 +1,20 @@
+task checkLastReleaseTestRun() {
+  doLast {
+        def resultFiles = fileTree("master") { include '**/testresult.xml' }
+        def lasttestfile = ''
+        resultFiles.each { rfile ->
+            logger.error("Processing Report ${rfile}")
+            if (rfile.toString() > lasttestfile){
+                lasttestfile = rfile.toString()
+            }
+        }
+        logger.error("Checking Report ${lasttestfile}")
+
+        def testsuite = new XmlSlurper().parse(new File(lasttestfile))
+        println testsuite.name()
+        testsuite.testcase.each { testcase ->
+            logger.error("Processing Testcase ${testcase.name()}")
+            assert testcase.failure.isEmpty()
+        }
+    }
+}
