@@ -1,6 +1,6 @@
 task checkLastReleaseTestRun() {
   doLast {
-        def resultFiles = fileTree("master") { include '**/testresult.xml' }
+        def resultFiles = fileTree("test") { include '**/testresult.xml' }
         def lasttestfile = ''
         resultFiles.each { rfile ->
             logger.error("Processing Report ${rfile}")
