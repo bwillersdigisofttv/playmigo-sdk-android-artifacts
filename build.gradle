@@ -1,4 +1,4 @@
-task checkLastReleaseTestRun() {
+task checkLastTestRun() {
   doLast {
         def resultFiles = fileTree("test") { include '**/testresult.xml' }
         def lasttestfile = ''
